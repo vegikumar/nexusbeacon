@@ -29,8 +29,8 @@ class OptimizeResponse
             $response->header('Cache-Control', 'public, max-age=31536000, immutable');
             $response->header('Expires', gmdate('D, d M Y H:i:s \G\M\T', time() + 31536000));
         } else {
-            // Cache HTML pages for 1 hour
-            $response->header('Cache-Control', 'public, max-age=3600, must-revalidate');
+            // Disable HTML caching while debugging/deploying
+            $response->header('Cache-Control', 'no-cache, private');
         }
 
         // Enable gzip compression
