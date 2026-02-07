@@ -38,13 +38,11 @@ RUN npm install && npm run build
 
 # Create storage link and set permissions
 RUN chown -R www-data:www-data /var/www/html \
-    && chmod -R 775 storage bootstrap/cache \
+    && chmod -R 775 storage bootstrap/cache database \
     && php artisan storage:link || true
 
-# Clear Laravel caches
-RUN php artisan config:cache \
-    && php artisan route:cache \
-    && php artisan view:cache
+# Clear Laravel caches (but don't bake them in to allow dynamic env vars)
+RUN php artisan view:cache
 
 EXPOSE 80
 CMD ["apache2-foreground"]
