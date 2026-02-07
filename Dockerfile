@@ -37,9 +37,11 @@ RUN composer install --optimize-autoloader --no-dev
 RUN npm install && npm run build
 
 # Create storage link and set permissions
-RUN chown -R www-data:www-data /var/www/html \
+RUN touch database/database.sqlite \
+    && chown -R www-data:www-data /var/www/html \
     && chmod -R 775 storage bootstrap/cache database \
-    && php artisan storage:link || true
+    && php artisan storage:link || true \
+    && php artisan migrate --force
 
 # Clear Laravel caches (but don't bake them in to allow dynamic env vars)
 RUN php artisan view:cache
