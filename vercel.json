@@ -1,6 +1,6 @@
 {
-  "framework": "laravel",
-  "outputDirectory": "public",
+  "buildCommand": "npm run build",
+  "runtime": "php:8.2",
   "env": [
     "APP_KEY",
     "APP_DEBUG",
@@ -12,10 +12,14 @@
       "runtime": "php:8.2"
     }
   },
-  "rewrites": [
+  "routes": [
     {
-      "source": "/(.*)",
-      "destination": "/api/index.php"
+      "src": "/build/(.*)",
+      "dest": "/public/build/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/api/index.php"
     }
   ]
 }
