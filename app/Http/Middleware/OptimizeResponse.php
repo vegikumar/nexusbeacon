@@ -18,6 +18,11 @@ class OptimizeResponse
     {
         $response = $next($request);
 
+        // Check if response supports headers (some error responses might not)
+        if (!method_exists($response, 'header')) {
+            return $response;
+        }
+
         // Add caching headers for static assets
         if ($request->is('build/*') || $request->is('*.css') || $request->is('*.js') ||
             $request->is('*.woff2') || $request->is('*.webp') || $request->is('*.jpeg') || $request->is('*.jpg') || $request->is('*.png')) {
