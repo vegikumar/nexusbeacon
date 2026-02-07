@@ -12,7 +12,7 @@
         <div class="container relative z-10 py-20 lg:py-0 mt-4 mb-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
                 <div class="lg:col-span-7 reveal">
-                    <div class="inline-flex items-center space-x-3 px-4 py-2 bg-navy/5 rounded-full mb-816">
+                    <div class="inline-flex items-center space-x-3 px-4 py-2 bg-navy/5 rounded-full mb-8">
                         <span class="w-2 h-2 bg-gold rounded-full animate-pulse"></span>
                         <span class="text-[10px] font-black uppercase tracking-[0.3em] text-navy">Innovating B2B Marketing</span>
                     </div>
@@ -38,7 +38,7 @@
                 <div class="lg:col-span-5 reveal" style="transition-delay: 0.2s;">
                     <div class="relative">
                         <!-- Decorative Stats Card -->
-                        <div class="reboot-card p-10 relative z-10 overflow-hidden" style="margin-bottom: 200px;">
+                        <div class="reboot-card p-10 relative z-10 overflow-hidden">
                             <div class="flex items-center justify-between mb-10">
                                 <div class="text-[10px] font-black uppercase tracking-widest text-gold leading-none">Campaign Growth</div>
                                 <div class="w-8 h-8 bg-surface rounded-lg flex items-center justify-center">
