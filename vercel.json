@@ -1,0 +1,21 @@
+{
+  "framework": "laravel",
+  "outputDirectory": "public",
+  "env": [
+    "APP_KEY",
+    "APP_DEBUG",
+    "APP_ENV",
+    "APP_URL"
+  ],
+  "functions": {
+    "api/index.php": {
+      "runtime": "php:8.2"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/api/index.php"
+    }
+  ]
+}
